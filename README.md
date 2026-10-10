@@ -22,26 +22,34 @@ Rewritten Question: How does the difference between home and away goals vary fro
   
 **Q1 - How many matches had 4 or more goals?**
 
+
 q("""
 SELECT COUNT(*) AS orders
 FROM data
+
 WHERE home_goal + away_goal >= 4 
 """)
+
 
 Finding: 278 matches had 4 or more total goals.
 
 **Q2 - Which season had the most ties in matches?**
 
+
 q("""
 SELECT season, COUNT(*) AS ties
 FROM data
 WHERE home_goal = away_goal
+
+
 GROUP BY season
 ORDER BY ties DESC
 LIMIT 1
 """)
 
+
 Finding: The 2016 season had the most ties, with 50 ties.
+
 
 **Q3 - What are the top 5 home teams that had the highest total goals in a specific season?
 **
@@ -50,6 +58,8 @@ q("""
 SELECT home_team, SUM(home_goal) AS total_goals
 FROM data
 WHERE season = 2020
+
+
 GROUP BY home_team
 ORDER BY total_goals DESC
 LIMIT 5
