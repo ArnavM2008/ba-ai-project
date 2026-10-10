@@ -18,13 +18,13 @@ Group: season
 
 Rewritten Question: How does the difference between home and away goals vary from season to season in the Brazilian Cup?
 
-    ##SQL
+## SQL
   
 **Q1 - How many matches had 4 or more goals?**
 
 
 ```sql
-SELECT COUNT(*) AS orders
+SELECT COUNT(*) AS matches
 FROM data
 
 WHERE home_goal + away_goal >= 4 
@@ -40,8 +40,6 @@ Finding: 278 matches had 4 or more total goals.
 SELECT season, COUNT(*) AS ties
 FROM data
 WHERE home_goal = away_goal
-
-
 GROUP BY season
 ORDER BY ties DESC
 LIMIT 1
@@ -58,8 +56,6 @@ Finding: The 2016 season had the most ties, with 50 ties.
 SELECT home_team, SUM(home_goal) AS total_goals
 FROM data
 WHERE season = 2020
-
-
 GROUP BY home_team
 ORDER BY total_goals DESC
 LIMIT 5
