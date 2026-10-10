@@ -13,6 +13,7 @@ Diagnostic Question: What factors make the home advantage in the Brazilian Cup s
 Week 2: SQL
 
 Number measured: home_goal & away_goal
+
 Group: season
 
 Rewritten Question: How does the difference between home and away goals vary from season to season in the Brazilian Cup?
