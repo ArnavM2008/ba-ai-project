@@ -31,8 +31,6 @@ WHERE home_goal + away_goal >= 4
 """)
 
 
-
-
 Finding: 278 matches had 4 or more total goals.
 
 **Q2 - Which season had the most ties in matches?**
@@ -51,8 +49,6 @@ LIMIT 1
 
 
 Finding: The 2016 season had the most ties, with 50 ties.
-
-
 
 
 **Q3 - What are the top 5 home teams that had the highest total goals in a specific season?
