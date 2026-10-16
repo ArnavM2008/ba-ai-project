@@ -20,45 +20,42 @@ Rewritten Question: How does the difference between home and away goals vary fro
 
 ## SQL
   
-**Q1 - How many matches had 4 or more goals?**
+**Q1 - How many matches did the home team win?**
 
 
 ```sql
-SELECT COUNT(*) AS matches
+SELECT COUNT(*) AS home_wins
 FROM data
-
-WHERE home_goal + away_goal >= 4 
+WHERE home_goal > away_goal
 ```
 
 
-Finding: 278 matches had 4 or more total goals.
+Finding: The home team won 579 matches.
 
-**Q2 - Which season had the most ties in matches?**
+**Q2 - Which season had the greatest average difference between home goals and away goals?**
 
 
 ```sql
-SELECT season, COUNT(*) AS ties
+SELECT season, AVG(home_goal - away_goal) AS avg_goal_difference
 FROM data
-WHERE home_goal = away_goal
 GROUP BY season
-ORDER BY ties DESC
-LIMIT 1
+ORDER BY avg_goal_difference DESC
 ```
 
 
-Finding: The 2016 season had the most ties, with 50 ties.
+Finding: The 2014 season had the greatest average home away goal difference with and average difference of .497 goals per match.
 
 
-**Q3 - What are the top 5 home teams that had the highest total goals in a specific season?
+**Q3 - What are the top 5 home teams that had the highest total goals difference between home and away goals in 2020?
 **
 
 ```sql
-SELECT home_team, SUM(home_goal) AS total_goals
+SELECT home_team, SUM(home_goal - away_goal) AS total_goal_difference
 FROM data
 WHERE season = 2020
 GROUP BY home_team
-ORDER BY total_goals DESC
+ORDER BY total_goal_difference DESC
 LIMIT 5
 ```
 
-Finding: During season 2020, the top 5 home teams scoring the most goals were Ceará, Ferroviária, Brusque, Palmeiras, and Atlético.
+Finding: During season 2020, Palmeiras - SP had the highest total home to away goal difference of 6, followed by Fluminense - RJ, Ferroviária, and Ceará with differences of 6 goals each, and Brusque with 4.
