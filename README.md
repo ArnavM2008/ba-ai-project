@@ -59,3 +59,11 @@ LIMIT 5
 ```
 
 Finding: During season 2020, Palmeiras - SP had the highest total home to away goal difference of 6, followed by Fluminense - RJ, Ferroviária, and Ceará with differences of 6 goals each, and Brusque with 4.
+
+
+Week03 Tableau
+
+## Dashboard
+[View my dashboard](https://public.tableau.com/app/profile/arnav.mahajan3272/viz/Week3BUANAssignment/Dashboard1?publish=yes)
+![Dashboard](dashboard.png)
+**Finding:** Season 2014 had the highest average goal difference at about .50 goals per match.
